@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    {% include 'base/header.html' %}
+
+  <body>
+    <div class="container-scroller">
+        {% include 'base/navbar.html' %}
+      <!-- partial -->
+      <div class="container-fluid page-body-wrapper">
+          
+
+          {% include 'base/sidebar.html'%}
+
+        <!-- partial -->
+        <div class="main-panel">
+          <div class="content-wrapper">
+            <!-- Page Title Header Starts-->
+            <div class="row page-title-header">
+              <div class="col-12">
+                <div class="page-header">
+                  <h4 class="page-title">{% block pagetitle %} {% endblock %}</h4>
+                  <div class="quick-link-wrapper w-100 d-md-flex flex-md-wrap">
+                    <ul class="quick-links">
+                      <li><a href="#">ICE Market data</a></li>
+                      <li><a href="#">Own analysis</a></li>
+                      <li><a href="#">Historic market data</a></li>
+                    </ul>
+                    <ul class="quick-links ml-auto">
+                      <li><a href="#">Settings</a></li>
+                      <li><a href="#">Analytics</a></li>
+                      <li><a href="#">Watchlist</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Page Title Header Ends-->
+
+
+            <!--Page Content-->
+            <div class="animated-fade-in bg-white">
+            {% block content %}
+            {% endblock %}
+
+            </div>
+        </div>    
+        <!--End Page Content-->
+
+          <!-- content-wrapper ends -->
+          <!-- partial:partials/_footer.html -->
+            {% include 'base/footer.html' %}
+          <!-- partial footer -->
+        </div>
+        <!-- main-panel ends -->
+      </div>
+      <!-- page-body-wrapper ends -->
+    </div>
+    <!-- container-scroller -->
+
+
+    <!-- plugins:js -->
+    {% include 'base/js.html'%}
+
+  </body>
+</html>

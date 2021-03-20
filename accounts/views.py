@@ -27,4 +27,4 @@ def Userlogout(request):
 
 @login_required(login_url='login')
 def home(request):
-    return render(request, 'index.html') 
+    return render(request, 'home.html') 

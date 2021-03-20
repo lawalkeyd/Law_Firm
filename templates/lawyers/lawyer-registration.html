@@ -1,0 +1,76 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block title %}Lawyer Registration Form {% endblock %}
+{% block content %}
+  <div class="card">
+    <div class="card-header">Lawyer Registration Form</div>
+    <div class="card-body">
+      <form action="" method="post" enctype="multipart/form-data" id="LawyerRegistrationForm">
+
+        <div class="law_personal_info">
+          <div class="card">
+            <div class="card-header">Personal Information</div>
+            <div class="card-body">
+              {% csrf_token %}
+              {{ form.as_p }}
+            </div>
+          </div>
+          <button id="law_personal_info_btn" type="button" class="btn btn-primary pull-right">Next</button>
+        </div>
+
+        <div class="law_login_form">
+          <div class="card">
+            <div class="card-header">Login Information</div>
+            <div class="card-body">
+              {% csrf_token %}
+              {{login_form.as_p}}
+            </div>
+          </div>
+          <button id="law_login_prev_btn" type="button" class="btn btn-primary pull-left">Previous</button>
+          <button id="law_login_btn" type="button" class="btn btn-primary pull-right">Next</button>
+        </div>
+
+        <div class="law_edu_form">
+          <div class="card">
+            <div class="card-header">Education Information</div>
+            <div class="card-body">
+              {% csrf_token %}
+              {{ education_form.as_p }}
+            </div>
+          </div>  
+          <button id="law_edu_prev_btn" type="button" class="btn btn-primary pull-left">Previous</button>
+          <button id="law_edu_btn" type="button" class="btn btn-primary pull-right">Next</button>       
+        </div>
+
+        <div class="law_job_form">
+          <div class="card">
+            <div class="card-header">Job Information</div>
+            <div class="card-body">
+              {% csrf_token %}
+              {{ job_form.as_p }}
+            </div>
+          </div>
+          <button id="law_job_prev_btn" type="button" class="btn btn-primary pull-left">Previous</button>
+          <button id="law_job_btn" type="button" class="btn btn-primary pull-right">Next</button>
+        </div>
+
+        <div class="law_experience_form">
+          <div class="card">
+            <div class="card-header">Experience Information</div>
+            <div class="card-body">
+              {% csrf_token %}
+              {{ experience_form.as_p }}
+            </div>
+          </div>
+          <button id="law_exp_prev_btn" type="button" class="btn btn-primary pull-left">Previous</button>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+
+        
+      </form>
+      <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+      <script src="{% static 'src/js/registration.js' %}"></script>      
+    </div>
+  </div>
+{% endblock %}

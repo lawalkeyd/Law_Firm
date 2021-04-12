@@ -86,6 +86,4 @@ class PersonalInfo(models.Model):
     login_details = models.ForeignKey(UserAccount, on_delete=models.SET_NULL, null=True)
 
     def __str__(self):
-        return self.name        
-
-        
+        return self.name              

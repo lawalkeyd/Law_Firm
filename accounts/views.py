@@ -27,4 +27,10 @@ def Userlogout(request):
 
 @login_required(login_url='login')
 def home(request):
-    return render(request, 'home.html') 
+    response = render(request, 'home.html')
+    if request.COOKIES.get('visits'):
+        value = int(request.COOKIES.get('visits'))
+        response.set_cookie('visits', value + 1)
+    else:
+        response.set_cookie('visits', 1)
+    return response         

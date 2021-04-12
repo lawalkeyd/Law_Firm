@@ -1,0 +1,108 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block content %}
+  <div class="card">
+    <div class="card-header">
+      <div class="row">
+        <img style="height:200px; width:200px; border-radius:50%; margin:auto" src="{{ teacher.photo.url }}" alt="Photo">
+      </div>
+    </div>
+    <div class="card-body">
+
+      <div class="personal_information">
+        <div class="row">
+          <h2 class="mx-auto">Personal Information</h2>
+        </div>
+        <hr>
+        <div class="row">
+          <div style="font-size:28px; margin-left: 30px">
+            <pre>Name                    : {{ lawyer.name }}</pre>
+            <pre>Date of Birth           : {{ lawyer.date_of_birth }}</pre>
+            <pre>Place of Birth          : {{ lawyer.place_of_birth }}</pre>
+            <pre>Nationality             : {{ lawyer.nationality }}</pre>
+            <pre>Religion                : {{ lawyer.religion }}</pre>
+            <pre>Gender                  : {{ lawyer.gender }}</pre>
+            <pre>Blood Group             : {{ lawyer.blood_group }}</pre>
+            <pre>Driving License/Passport: {{ lawyer.driving_license_passport }}</pre>
+            <pre>Phone No                : {{ lawyer.phone_no }}</pre>
+            <pre>Email                   : {{ lawyer.email }}</pre>
+            <pre>Father`s Name           : {{ lawyer.father_name }}</pre>
+            <pre>Mother`s Name           : {{ lawyer.mother_name }}</pre>
+            <pre>Marital Status          : {{ lawyer.marital_status }}</pre>
+            <pre>Education               : {{ lawyer.education }}</pre>
+            <pre>Job                     : {{ lawyer.job }}</pre>
+          </div>
+        </div>
+      </div>
+
+      <div class="address_information">
+        <div class="row">
+          <h2 class="mx-auto">Education Information</h2>
+        </div>
+        <hr>
+        <div class="row">
+          <div style="font-size:24px; margin-left: 30px">
+            <pre>Name of Exam: {{ lawyer.education.name_of_exam }}</pre>
+            <pre>Institute   : {{ lawyer.education.institute }}</pre>
+            <pre>Group       : {{ lawyer.education.group }}</pre>
+            <pre>Grade/GPA   : {{ lawyer.education.grade }}</pre>
+            <pre>Board       : {{ lawyer.education.board }}</pre>
+            <pre>Passing Year: {{ lawyer.education.passing_year }}</pre>
+          </div>
+        </div>
+      </div>
+
+      <div class="emergency_contact_information">
+        <div class="row">
+          <h2 class="mx-auto">Training Information</h2>
+        </div>
+        <hr>
+        <div class="row">
+          <div style="font-size:24px; margin-left: 30px">
+            <pre>Training Name: {{ lawyer.training.training_name }}</pre>
+            <pre>Year         : {{ lawyer.training.year }}</pre>
+            <pre>Duration     : {{ lawyer.training.duration }}</pre>
+            <pre>Place        : {{ lawyer.training.place }}</pre>
+          </div>
+        </div>
+      </div>
+
+      <div class="emergency_contact_information">
+        <div class="row">
+          <h2 class="mx-auto">Job Information</h2>
+        </div>
+        <hr>
+        <div class="row">
+          <div style="font-size:24px; margin-left: 30px">
+            <pre>Category                 : {{ lawyer.job.category }}</pre>
+            <pre>Joining Date             : {{ lawyer.job.joning_date }}</pre>
+            <pre>Institute Name           : {{ lawyer.job.institute_name }}</pre>
+            <pre>Job Designation          : {{ lawyer.job.job_designation }}</pre>
+            <pre>Department               : {{ lawyer.job.department }}</pre>
+            <pre>Scale                    : {{ lawyer.job.scale }}</pre>
+            <pre>Grade of Post            : {{ lawyer.job.grade_of_post }}</pre>
+            <pre>First Time Scale Due Year: {{ lawyer.job.first_time_scale_due_year }}</pre>
+            <pre>Promotion Due Year       : {{ lawyer.job.promotion_due_year }}</pre>
+            <pre>Recreation Leave Due Year: {{ lawyer.job.recreation_leave_due_year }}</pre>
+            <pre>Expected Retirement Year : {{ lawyer.job.expected_retirement_year }}</pre>
+          </div>
+        </div>
+      </div>
+
+      <div class="previous_academic_information">
+        <div class="row">
+          <h2 class="mx-auto">Exprience Information</h2>
+        </div>
+        <hr>
+        <div class="row">
+          <div style="font-size:24px; margin-left: 30px">
+            <pre>Institute Name: {{ lawyer.experience.institute_name }}</pre>
+            <pre>Designation   : {{ lawyer.experience.designation }}</pre>
+            <pre>Trainer       : {{ lawyer.experience.trainer }}</pre>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  {% endblock %}

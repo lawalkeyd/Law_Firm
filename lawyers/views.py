@@ -37,3 +37,20 @@ def lawyer_registration(request):
     }
     return render(request, 'lawyers/lawyer-registration.html', context)
 
+
+@login_required(login_url='login')
+def lawyer_list(request):
+    lawyers = PersonalInfo.objects.all()    
+    context = {
+        'lawyers': lawyers
+    }
+    return render(request, 'lawyers/lawyer-list.html', context)
+
+
+@login_required(login_url='login')
+def lawyer_profile(request, id):
+    lawyer = PersonalInfo.objects.get(id=id)
+    context = {
+        'lawyer': lawyer
+    }    
+    return render(request, 'lawyers/lawyer-profile.html', context)
